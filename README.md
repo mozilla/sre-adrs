@@ -44,15 +44,74 @@ New ADRs should largely follow the template stored in [TEMPLATE.md](TEMPLATE.md)
 
 ## Automation
 
-If desired, you can use [the adr cli](https://github.com/npryce/adr-tools) to work with proposals in this repository.
+If desired, you can use [the adr cli](https://github.com/npryce/adr-tools) and the [adr-viewer pip package](https://github.com/mrwilson/adr-viewer) to work with proposals in this repository. 
 
-Some examples:
+NB: given our multi-team setup (for possible growth) and [limitations of adr-tools](https://github.com/npryce/adr-tools/issues/48), this repository is setup currently for `adr` to work against `decisions/websre`. If you want to use the adr-tools cli with `decisions/global` or some other team & subdirectory, you need to manually change that `.adr-dir` file. If / when this repository is setup for multiple teams beyond the theoretical, we'll need some simple wrapper or another tool to help switch between ADR team repositories.
 
+Installation:
 ```
-# create a new adr from the template:
-$ adr new My New ADR
-# generate a TOC in markdown to go into TOC.md
+$ brew install adr-tools # see other install methods here: https://github.com/npryce/adr-tools/blob/master/INSTALL.md
+$ adr
+  usage: adr help COMMAND [ARG] ...
+  COMMAND is one of:
+  help
+  new
+  link
+  list
+  init
+  config
+  generate
+  upgrade-repository
+  Run 'adr help COMMAND' for help on a specific command.
+$ pip install adr-viewer # used with python 3.9 here
+$ adr-viewer --help
+  Usage: adr-viewer [OPTIONS]
+  
+  Options:
+    --adr-path TEXT  Directory containing ADR files.  [default: doc/adr/]
+    --output TEXT    File to write output to.  [default: index.html]
+    --serve          Serve content at http://localhost:8000/
+    --help           Show this message and exit.
+```
+
+Using adr-tools cli (adr):
+
+### set adr-tools directory for team in question:
+See the limitations of adr-tools notation above. You need to change `.adr-dir` to the team you want to work on.
+```
+$ echo "decisions/websre" > .adr-dir
+```
+
+### create new adr proposal for your team:
+```
+$ adr new My Awesome Web SRE Team ADR
+  ./0002-my-awesome-global-adr.md
+# then add your info & go
+$ vi 0002-my-awesome-global-adr.md
+```
+
+### initialize a new team- or group-specific decisions directory:
+```
+$ adr init decisions/my-new-team
+  decisions/my-new-team/0001-record-architecture-decisions.md
+$ vi decisions/my-new-team/0001-record-architecture-decisions.md # then add your info & go
+$ cp -r decisions/websre/templates decisions/my-new-team # set up custom templates if you like
+$ vi decisions/my-new-team/templates/template.md # edit that custom team template
+```
+
+### generate whole repository Table of Contents:
+```
 $ adr generate toc > TOC.md
+# need to add some recursion when using more than Web SRE Team decisions.
 ```
 
 For a cleaner presentation, adr-viewer (a python package) is being considered as part of the CI to generate static files for a website from this repository.
+
+### serve localhost:8000 view of Web SRE ADRs
+```
+$ adr-viewer --serve --adr-path decisions/websre
+  Starting server at http://localhost:8000/
+  {server output; cntl + c to exit}
+```
+
+This could be used one day to generate HTML to serve via GitHub pages, but currently is just here for exploration.

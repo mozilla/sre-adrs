@@ -1,10 +1,11 @@
 # 1. Record architecture decisions
 
 Date: 2021-04-28
+Scope: Web SRE Team
 
 ## Status
 
-Accepted
+Proposed
 
 ## Context
 

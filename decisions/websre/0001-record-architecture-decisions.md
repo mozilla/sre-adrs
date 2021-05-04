@@ -9,7 +9,7 @@ Proposed
 
 ## Context
 
-We need to record the architectural decisions made on this project.
+We need to record the architectural decisions made for our team.
 
 ## Decision
 

@@ -29,9 +29,9 @@ All ADRs go through a review and approval process that mirrors gitflow, e.g.:
 
 1. Create feature branch off main & add your ADR - as a new markdown document in the correct `decisions` directory & following our ADR template
 2. Commit & push your work up to this repository & create a PR against main. Tag the folks whose approval you need for this particular ADR.
-    i. For the Web SRE Team, you can use the IT-SE GitHub team as the reviewer.
-    ii. Web SRE requires unananimous approval for the ADR to pass;
-    iii. The PR should be noted in the correct team channels or meetings to make sure people review. 
+    1. For the Web SRE Team, you can use the IT-SE GitHub team as the reviewer.
+    2. Web SRE requires unananimous approval for the ADR to pass;
+    3. The PR should be noted in the correct team channels or meetings to make sure people review. 
 3. Review happens against the PR. If any blockers to moving the proposed ADR come up, they're addressed in those same channels / team meeetings and handed off for further refinement before revisiting the PR.
 4. Once there is approval, the PR is merged into main and the ADR is considered approved.
 5. After the approval, the author should ensure any work tickets related to implementation of this decision exist in the relevant backlogs.

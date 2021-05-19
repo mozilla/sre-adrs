@@ -40,7 +40,7 @@ Any new requests for topics to be written up in an ADR can be made as a ticket u
 
 ## Template
 
-New ADRs should largely follow the template stored in [TEMPLATE.md](TEMPLATE.md).
+New ADRs should largely follow the template stored in [template.md](decisions/global/templates/template.md).
 
 ## Automation
 

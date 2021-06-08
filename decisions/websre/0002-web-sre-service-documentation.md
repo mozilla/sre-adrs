@@ -24,7 +24,7 @@ For each Web SRE Service, we will author a Service Documentation page in Mana as
 Service Documentation pages:
 * use the Web SRE Services Docs confluence page template for its structure;
 * have a primary audience of the Web SRE Team itself, with a secondary audience of other SRE teams;
-* are open to Mozilla internally, however not all teams of Mozilla are the intended audience of these pages;
+* are open to Mozilla internally, however not all teams of Mozilla are the intended audience of these pages (SRE-external teams will focus on the escalation path section primarily);
 * have Runbook pages (what to do when a specific symptom of an issue is recognized) as child pages to the relevant Service Documentation page;
 * have How-to pages (how to perform specific tasks for a service) as child pages to the relevant Service Documentation page;
 * are maintained to reflect the current state - to the best of our knowledge - of a service's context, including a service being decommissioned (the Service Documentation page should note that but be left up as a tombstone marker of the decision);

@@ -17,7 +17,7 @@ To help share knowledge between the Web SRE Team about these services' unique si
 
 ## Decision
 
-A Web SRE service here is defined as any codebase where we have some ownership over an aspect of this codebase being functional - e.g. the deployment process, automation, infrastructure running the service, observability of some aspect(s), or authoring the code ourselves. Web SRE services could be externally or internally-facing, including infrastructure services only Web SRE are aware of and leverage.
+A Web SRE service here is defined as any codebase where we have some ownership over an aspect of this codebase being functional - e.g. the deployment process, automation, infrastructure running the service, observability of some aspect(s), or authoring the code ourselves. Web SRE services could be externally or internally-facing, including infrastructure services only Web SRE are aware of and leverage. Web SRE services also include non-prod environments for testing infrastructure code (like staging Kubernetes clusters to test building new clusters) and supporting services (log aggregation, alerting, etc) as well as non-prod application code. 
 
 For each Web SRE Service, we will author a Service Documentation page in Mana as a child of https://mana.mozilla.org/wiki/display/SRE/Service+Documentation.
 

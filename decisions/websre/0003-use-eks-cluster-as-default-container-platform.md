@@ -24,6 +24,9 @@ There are quite a few options when choosing a platform and infrastructure patter
 * Reduces complexity of setting up our own infrastructure, or context switching between multiple container platform infrastructures.
 * Incurs EKS costs.
 * Will require migrations from old setups (Kops, External-terraform EKS module).
+* EKS access model should improve our security posture and ease of access.
+    * Users must have SSO access to get to a cluster, so employees exitng limits access more reliably than previous k8s models.
+    * Having the correct AWS permissions allows you to create the k8s credentials needed to interact with the cluster, so we no longer have to pass a secret file around between people.
 
 ## Resources
 

@@ -35,7 +35,23 @@ Service Documentation pages do not:
 * include all possible services Web SRE might work with - e.g. we don't document AWS Services generically or services owned and maintained by other teams; 
 * include all possible details for all audiences beyond SRE - when such documentation requests come up, they can be added as a How To as a child to a service page, or a generic How To if not limited to one service;
 * live anywhere other than Mana. Web SRE Service documentation managed elsewhere, e.g. GitHub, Google Docs, should be migrated & then deprecated via links pointing readers to the Mana page;
-* replace other forms of documentation living elsewhere - e.g. codebase-specific documentation within a git repository, decision records in this repository, collaboration / draft developer notes in Google documents, Mana pages in other places and formats walking through shared infrastructure or processes, etc.;
+* replace other forms of documentation living elsewhere - e.g. codebase-specific documentation within a git repository, decision records in this repository, collaboration / draft developer notes in Google documents, Mana pages in other places and formats walking through shared infrastructure or processes, etc..
+
+Service Documentation pages optionally have Runbook & How-To child pages. For these, there are the following expectatiosn:
+
+Runbook pages should:
+* include ways to validate what state a system is in (e.g. how to reproduce the problem);
+* be as self-contained as is feasible;
+* explain what problem a given state indicates;
+* give commands to resolve the problem as clearly as possible;
+* outline a fallback plan (who to call, what to do next).
+
+How-to pages should:
+* repeat existing documentation as little as possible. Linking to external docs is encouraged, perhaps augmented with our specific contexts;
+* assume a high level of competence from the audience (don't explain how to download a csv file, though giving an example command to establish context is great);
+* explain the decision points in a process, and how to make them;
+* outline what is needed to perform the work as early as possible in the document (what access, what tools);
+* outline who needs to approve the work, or how to decide if it's safe to do the work as early as possible.
 
 ## Consequences
 

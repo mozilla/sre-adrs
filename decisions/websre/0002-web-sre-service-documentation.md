@@ -28,13 +28,13 @@ Service Documentation pages:
 * have Runbook pages as child pages to the relevant Service Documentation page;
 * are maintained to reflect the current state - to the best of our knowledge - of a service's context, including a service being decommissioned (the Service Documentation page should note that but be left up as a tombstone marker of the decision);
 * cover Web SRE Services as defined above.
+* replace SRE_INFO.md files in Web SRE team-managed source code GitHub repositories. When an SRE_INFO.md file is encountered, it should be reviewed for any information that can be added to a Service Documentation page, removed, and an link to the Service Documentation page added to the codebase's REAMDE.md.
 
 Service Documentation pages do not:
 * include all possible services Web SRE might work with - e.g. we don't document AWS Services generically or services owned and maintained by other teams; 
 * include all possible details for all audiences beyond SRE - when such documentation requests come up, they can be added as a How To as a child to a service page, or a generic How To if not limited to one service;
 * live anywhere other than Mana. Web SRE Service documentation managed elsewhere, e.g. GitHub, Google Docs, should be migrated & then deprecated via links pointing readers to the Mana page;
 * replace other forms of documentation living elsewhere - e.g. codebase-specific documentation within a git repository, decision records in this repository, collaboration / draft developer notes in Google documents, Mana pages in other places and formats walking through shared infrastructure or processes, etc.;
-* entirely replace SRE_INFO.md files in Web SRE team-managed source code GitHub repositories. At a mininum, these SRE_INFO.md documents should be updated to point to the relevant Mana Page, and should be discussed and refined in a future ADR on those specifically.
 
 ## Consequences
 

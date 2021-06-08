@@ -25,7 +25,8 @@ Service Documentation pages:
 * use the Web SRE Services Docs confluence page template for its structure;
 * have a primary audience of the Web SRE Team itself, with a secondary audience of other SRE teams;
 * are open to Mozilla internally, however not all teams of Mozilla are the intended audience of these pages;
-* have Runbook pages as child pages to the relevant Service Documentation page;
+* have Runbook pages (what to do when a specific symptom of an issue is recognized) as child pages to the relevant Service Documentation page;
+* have How-to pages (how to perform specific tasks for a service) as child pages to the relevant Service Documentation page;
 * are maintained to reflect the current state - to the best of our knowledge - of a service's context, including a service being decommissioned (the Service Documentation page should note that but be left up as a tombstone marker of the decision);
 * cover Web SRE Services as defined above.
 * replace SRE_INFO.md files in Web SRE team-managed source code GitHub repositories. When an SRE_INFO.md file is encountered, it should be reviewed for any information that can be added to a Service Documentation page, removed, and an link to the Service Documentation page added to the codebase's REAMDE.md.

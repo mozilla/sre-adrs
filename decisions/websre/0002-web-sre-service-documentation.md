@@ -5,7 +5,7 @@ Scope: Web SRE Team
 
 ## Status
 
-Proposed
+Approved
 
 ## Context
 

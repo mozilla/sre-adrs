@@ -2,7 +2,6 @@
 
 
 ## global
-* [1. Record architecture decisions](./decisions/global/0001-record-architecture-decisions.md)
 
 
 ## websre

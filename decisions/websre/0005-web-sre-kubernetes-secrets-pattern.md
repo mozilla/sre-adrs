@@ -8,7 +8,7 @@ Accepted
 
 ## Context
 
-Secrets are inconsistently managed across our various clusters.  This makes it hard to trace where secrets come from and update them.  It also increases our exposure to security issues, as our each tool used can become compromised independently.  Current known secret management includes git-crypt repos, with sops, that apply kubernetes secrets direct to the cluster; sealed secrets; and external secrets pointing at cloud provider secret storage.
+Secrets are inconsistently managed across our various clusters.  This makes it hard to trace where secrets come from and update them.  It also increases our exposure to security issues, as our each tool used can become compromised independently.  Current known secret management includes git-crypt repos, with sops, that apply kubernetes secrets direct to the cluster; sealed secrets; and external secrets pointing at cloud provider secret storage.  There are a few other methods that treat things that should be secrets incorrectly. For example, baking the 'secrets' into the docker image directly. We will treat those situations with more urgency, viewing them as explicitly a bad state to be in.
 
 The goal of this document is to describe the happy path for passing secrets to kubernetes based applications.
 

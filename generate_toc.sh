@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# adapted from https://github.com/npryce/adr-tools
+# a combination of a few scripts, _adr_title, _adr_generate_toc
+
 set -e
 
 args=$(getopt i:o:p: $*)

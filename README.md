@@ -76,14 +76,15 @@ $ adr-viewer --help
 
 Using adr-tools cli (adr):
 
-### set adr-tools directory for team in question:
-See the limitations of adr-tools notation above. You need to change `.adr-dir` to the team you want to work on.
-```
-$ echo "decisions/websre" > .adr-dir
-```
+To handle multiple teams we've made the table of contents generator work just on filenames.
+As such you can generally treat each adr directory as independent from the point of view of the ADR CLI tool.
 
 ### create new adr proposal for your team:
+This assumes someone has initialized a team or group folder for you previously.
+If not, the info is below.
+
 ```
+$ cd decisions/$team
 $ adr new My Awesome Web SRE Team ADR
   ./0002-my-awesome-global-adr.md
 # then add your info & go
@@ -91,9 +92,16 @@ $ vi 0002-my-awesome-global-adr.md
 ```
 
 ### initialize a new team- or group-specific decisions directory:
+
+You'll need a new folder for your team, feel free to add as needed.
+You will need to force add the adr-dir, as we want to ignore it at the root of repo,
+but it's nice to have, to make the init/new commands work well.
+
 ```
-$ adr init decisions/my-new-team
-  decisions/my-new-team/0001-record-architecture-decisions.md
+$ mkdir -p decisions/$team
+$ cd decisions/$team
+$ echo "." > .adr-dir
+$ git add -f .adr-dir
 $ vi decisions/my-new-team/0001-record-architecture-decisions.md # then add your info & go
 $ cp -r decisions/websre/templates decisions/my-new-team # set up custom templates if you like
 $ vi decisions/my-new-team/templates/template.md # edit that custom team template
@@ -101,8 +109,9 @@ $ vi decisions/my-new-team/templates/template.md # edit that custom team templat
 
 ### generate whole repository Table of Contents:
 ```
-$ adr generate toc > TOC.md
-# need to add some recursion when using more than Web SRE Team decisions.
+$ make gentoc
+# this will run the custom script generate_toc.sh, and generate the table of contents into the TOC.md file
+# commit this to git if you'd like.
 ```
 
 For a cleaner presentation, adr-viewer (a python package) is being considered as part of the CI to generate static files for a website from this repository.

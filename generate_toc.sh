@@ -12,11 +12,9 @@ link_prefix=./decisions/
 
 eval "$(adr config)"
 
-cat <<EOF
-# Architecture Decision Records
-EOF
+echo "# Architecture Decision Records"
 
-if [ ! -z $intro ]
+if [ -n "$intro" ];
 then
     cat "$intro"
     echo
@@ -24,8 +22,7 @@ fi
 
 basedir=$(pwd -P)/decisions
 
-for d in $(find $basedir -mindepth 1 -maxdepth 1 -type d)
-do
+for d in decisions/*/; do
   if ! [[ $d -ef $basedir ]]; then
     echo -e "\n\n## $(basename $d)"
 
@@ -42,7 +39,7 @@ done
 
 
 
-if [ ! -z $outro ]
+if [ -n "$outro" ]
 then
     echo
     cat "$outro"

@@ -28,7 +28,8 @@ For Web SRE Services persistent environments - dev, stage, prod - that are Kuber
 * Development clusters availability and uptime expectations (of the application or the infrastructure) does not include support outside of business hours, whereas Stage & Prod clusters can have availability & uptime expectations that require this support, but Stage & Prod uptime & support decisions are left to the SRE and project in question;
 * Development clusters can optionally include automatic infrastructure or platform updates, as a first place to review these changes and their effects;
 * Only use reviewed & approved, production-ready stable application & infrastructure releases on the Production cluster;
-* Only use reviewed & approved, stable infrastructure releases on the Stage cluster, and deploy those infrastructure changes when able to relatively quickly move the changes from stage into prod to avoid divergent results from staging and production applications.
+* Only use reviewed & approved, stable infrastructure releases on the Stage cluster, and deploy those infrastructure changes when able to relatively quickly move the changes from stage into prod to avoid divergent results from staging and production applications;
+* Expect that deployment on the Stage cluster is a step on the release & deployment pipelines for an application moving torwards Production.
 
 This ADR does not include the following:
 * How the applications within each cluster name their namespaces (e.g. keeping "discourse_prod" namespace in a production cluster is redundent, but also very explicit, and is left up to the SREs working on the service);

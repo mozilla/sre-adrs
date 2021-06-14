@@ -25,7 +25,7 @@ For Web SRE Services persistent environments - dev, stage, prod - that are Kuber
 * Use a distinct Kubernetes namespace within each cluster per application;
 * Deploy applications to these distinct clusters as relevant to the expected application environment (e.g. stage applications should deploy to the stage cluster, prod applications should deploy to the prod cluster, etc.);
 * Deploy operationals & infrastructure changes & upgrades to these distinct clusters, specifically moving changes from stage to prod, or reverting stage to match prod, within an appropriate timeframe, with an end goal of keeping stage and prod clusters in close alignment;
-* Development clusters availability and uptime expectations (of the application or the infrastructure) does not include support outside of business hours;
+* Development clusters availability and uptime expectations (of the application or the infrastructure) does not include support outside of business hours, whereas Stage & Prod clusters can have availability & uptime expectations that require this support, but Stage & Prod uptime & support decisions are left to the SRE and project in question;
 * Development clusters can optionally include automatic infrastructure or platform updates, as a first place to review these changes and their effects;
 * Only use reviewed & approved, production-ready stable application & infrastructure releases on the Production cluster;
 * Only use reviewed & approved, stable infrastructure releases on the Stage cluster, and deploy those infrastructure changes when able to relatively quickly move the changes from stage into prod to avoid divergent results from staging and production applications.

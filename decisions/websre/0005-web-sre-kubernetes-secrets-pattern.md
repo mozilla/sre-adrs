@@ -46,7 +46,7 @@ We expect CI/CD pipelines to use their current secret storage, and not try to co
 
 ## Consequences
 
-- We will be migrating secrets, which is a reasonably risky process for many applications.
+- Subject to prioritization and practicality concerns, we will migrate secrets to this solution, which can be a reasonably risky process for many applications.
 - We will have fewer methods for managing secrets, which ought to make it easier to rotate secrets, keep them up to date, etc.
 - We are gatekeepers for adding new secrets, which may increase unplanned work for our team.
 - If we were to lose the secrets manager completely, rebuilding would be a long and arduous process.
